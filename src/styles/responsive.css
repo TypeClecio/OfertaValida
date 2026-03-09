@@ -1,0 +1,37 @@
+@media (max-width: 880px) {
+  body {
+    padding: 20px 20px;
+  }
+
+  #app {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .store-page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'gallery'
+      'offer'
+      'details';
+  }
+
+  .main-image {
+    height: 240px;
+  }
+
+  .offer-card,
+  .gallery-card,
+  .details-card {
+    padding: 1.2rem;
+  }
+
+  .buy-now span {
+    font-size: 14px;
+  }
+
+  dl div {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}

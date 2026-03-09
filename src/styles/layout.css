@@ -1,0 +1,36 @@
+#app {
+  width: min(1120px, 100% - 2rem);
+  margin: 3rem auto;
+}
+
+.store-page {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  grid-template-areas:
+    'gallery offer'
+    'gallery details';
+  gap: 1.5rem;
+}
+
+.gallery-card,
+.offer-card,
+.details-card {
+  background-color: #fcfdff;
+  border-radius: 18px;
+  padding: 2rem;
+  border: 1px solid #d9e3f0;
+  box-shadow: 0 12px 24px rgba(41, 55, 77, 0.12);
+  position: static;
+}
+
+.gallery-card {
+  grid-area: gallery;
+}
+
+.offer-card {
+  grid-area: offer;
+}
+
+.details-card {
+  grid-area: details;
+}

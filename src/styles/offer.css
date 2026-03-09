@@ -1,0 +1,102 @@
+.tag {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #3f4f62;
+  background-color: var(--soft-blue);
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 0.75rem 0 1.4rem;
+  color: var(--soft-text);
+}
+
+.price-block {
+  margin-bottom: 1.25rem;
+}
+
+.price-title {
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+  color: var(--soft-title);
+}
+
+.price-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--soft-green-line);
+  border-radius: 10px;
+  background-color: var(--soft-green);
+}
+
+.price-option + .price-option {
+  margin-top: 0.5rem;
+}
+
+.price-option span {
+  color: #39556f;
+  font-weight: 600;
+  font-family: var(--number-font);
+}
+
+.price {
+  margin: 0;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  line-height: 1;
+  color: #111111;
+  font-weight: 800;
+  font-family: var(--number-font);
+  font-variant-numeric: tabular-nums;
+}
+
+.highlights {
+  margin: 0 0 1.8rem;
+  padding-left: 1.2rem;
+  color: #364a5f;
+}
+
+.highlights li + li {
+  margin-top: 0.45rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.buy-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  border: 1px solid #25d366;
+  border-radius: 10px;
+  padding: 0.78rem 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #25d366;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.buy-now:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.28);
+}
+
+.buy-now svg {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+}
