@@ -1,5 +1,6 @@
 import './style.css'
 import { inject } from '@vercel/analytics'
+import { injectSpeedInsights } from '@vercel/speed-insights'
 import { renderSpecifications } from './components/details-card'
 import { setupGallery } from './components/gallery'
 import { renderHighlights } from './components/offer-card'
@@ -10,6 +11,8 @@ import type { ProductConfiguration, ProductInfo } from './types'
 inject({
   mode: import.meta.env.DEV ? 'development' : 'production',
 })
+
+injectSpeedInsights()
 
 const buildWhatsAppUrl = (phone: string, configuration: ProductConfiguration) => {
   const pageLink = window.location.href
