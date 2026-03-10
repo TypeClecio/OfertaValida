@@ -1,4 +1,4 @@
-import type { ProductInfo } from '../types'
+import type { ProductConfiguration, ProductInfo } from '../types'
 
 const whatsappIcon = `
   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -8,36 +8,49 @@ const whatsappIcon = `
   </svg>
 `
 
-export const renderOfferCard = (product: ProductInfo, whatsappUrl: string) => `
+export const renderHighlights = (highlights: string[]) => highlights.map((item) => `<li>${item}</li>`).join('')
+
+export const renderOfferCard = (product: ProductInfo, selectedConfiguration: ProductConfiguration) => `
   <section class="offer-card">
     <p class="tag">Oferta limitada</p>
-    <h1>${product.title}</h1>
-    <p class="subtitle">${product.subtitle}</p>
+    <h1 data-product-title>${selectedConfiguration.title}</h1>
+    <p class="subtitle" data-product-subtitle>${selectedConfiguration.subtitle}</p>
 
     <div class="price-block">
-      <p class="price-title">Escolha a configuracao:</p>
-      ${product.priceOptions
+      <p class="price-title">Escolha a configuração:</p>
+      <div class="config-options" role="group" aria-label="Escolha a configuracao do setup">
+        ${product.configurations
         .map(
-          (option) => `
-            <div class="price-option">
-              <span>${option.label}</span>
-              <p class="price">${option.price}</p>
-            </div>
+          (configuration) => `
+            <button
+              type="button"
+              class="config-button ${configuration.id === selectedConfiguration.id ? 'is-active' : ''}"
+              data-configuration-id="${configuration.id}"
+              aria-pressed="${configuration.id === selectedConfiguration.id}"
+            >
+              ${configuration.buttonLabel}
+            </button>
           `,
         )
         .join('')}
+      </div>
+
+      <div class="selected-offer">
+        <p class="selected-offer-title">Preço da configuração escolhida</p>
+        <strong class="selected-config" data-selected-config>${selectedConfiguration.buttonLabel}</strong>
+        <p class="price" data-selected-price>${selectedConfiguration.price}</p>
+      </div>
     </div>
 
-    <ul class="highlights">
-      ${product.highlights.map((item) => `<li>${item}</li>`).join('')}
+    <ul class="highlights" data-highlights>
+      ${renderHighlights(selectedConfiguration.highlights)}
     </ul>
 
     <div class="actions">
-      <a class="buy-now" href="${whatsappUrl}" target="_blank" rel="noreferrer">
+      <a class="buy-now" href="#" target="_blank" rel="noreferrer" data-whatsapp-link>
         ${whatsappIcon}
-        <span>Falar com vendedor no WhatsApp</span>
+        <span data-whatsapp-text>Falar sobre ${selectedConfiguration.buttonLabel} no WhatsApp</span>
       </a>
     </div>
   </section>
 `
-

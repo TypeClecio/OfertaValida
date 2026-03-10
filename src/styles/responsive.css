@@ -16,7 +16,7 @@
       'details';
   }
 
-  .main-image {
+  .main-media {
     height: 240px;
   }
 
@@ -24,6 +24,10 @@
   .gallery-card,
   .details-card {
     padding: 1.2rem;
+  }
+
+  .config-options {
+    grid-template-columns: 1fr;
   }
 
   .buy-now svg {

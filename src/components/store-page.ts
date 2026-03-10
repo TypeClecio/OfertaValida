@@ -3,11 +3,14 @@ import { renderDetailsCard } from './details-card'
 import { renderGallery } from './gallery'
 import { renderOfferCard } from './offer-card'
 
-export const renderStorePage = (product: ProductInfo, whatsappUrl: string) => `
+export const renderStorePage = (product: ProductInfo) => {
+  const initialConfiguration = product.configurations[0]
+
+  return `
   <main class="store-page">
-    ${renderGallery(product.images)}
-    ${renderOfferCard(product, whatsappUrl)}
-    ${renderDetailsCard(product)}
+    ${renderGallery(product.media)}
+    ${renderOfferCard(product, initialConfiguration)}
+    ${renderDetailsCard(initialConfiguration)}
   </main>
   <footer class="site-footer">
     <p>Desenvolvido por <strong>TypeClecio</strong></p>
@@ -17,3 +20,4 @@ export const renderStorePage = (product: ProductInfo, whatsappUrl: string) => `
     </div>
   </footer>
 `
+}

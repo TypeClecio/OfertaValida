@@ -1,11 +1,8 @@
-export type ProductImage = {
+export type ProductMedia = {
+  type: 'image' | 'video'
   src: string
   alt: string
-}
-
-export type PriceOption = {
-  label: string
-  price: string
+  poster?: string
 }
 
 export type Specification = {
@@ -13,12 +10,17 @@ export type Specification = {
   value: string
 }
 
-export type ProductInfo = {
+export type ProductConfiguration = {
+  id: string
+  buttonLabel: string
   title: string
   subtitle: string
+  price: string
   highlights: string[]
-  priceOptions: PriceOption[]
   specifications: Specification[]
-  images: ProductImage[]
 }
 
+export type ProductInfo = {
+  configurations: ProductConfiguration[]
+  media: ProductMedia[]
+}

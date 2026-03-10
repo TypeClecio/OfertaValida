@@ -1,10 +1,24 @@
-.main-image {
-  width: 100%;
+.main-media-stage {
+  position: relative;
+  margin-bottom: 0.8rem;
   border-radius: 14px;
+  overflow: hidden;
+  background: #e9eef5;
+}
+
+.main-media {
+  display: block;
+  width: 100%;
   height: 320px;
   object-fit: cover;
-  margin-bottom: 0.8rem;
+}
+
+.main-media[data-media-type='image'] {
   cursor: zoom-in;
+}
+
+.main-video {
+  background: #09111c;
 }
 
 .thumb-grid {
@@ -13,43 +27,62 @@
   gap: 0.6rem;
 }
 
-.thumb-grid img {
-  width: 100%;
-  height: 88px;
-  border-radius: 10px;
-  object-fit: cover;
+.thumb-item {
+  position: relative;
+  padding: 0;
   border: 1px solid var(--soft-blue-line);
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
   cursor: pointer;
   transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
 }
 
-.thumb-grid img:hover {
+.thumb-item img {
+  display: block;
+  width: 100%;
+  height: 88px;
+  object-fit: cover;
+}
+
+.thumb-item:hover {
   transform: translateY(-1px);
 }
 
-.thumb-grid img.is-active {
+.thumb-item.is-active {
   border-color: #8aa9d6;
   box-shadow: 0 6px 14px rgba(138, 169, 214, 0.2);
 }
 
-.image-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: none;
+.thumb-badge {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  border-radius: 999px;
+  padding: 0.22rem 0.48rem;
+  color: #ffffff;
+  background: rgba(9, 17, 28, 0.82);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.main-media-stage:fullscreen {
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background: rgba(10, 16, 28, 0.85);
+  padding: 1.5rem;
+  background: #04080f;
 }
 
-.image-modal.is-open {
-  display: flex;
+.main-media-stage:fullscreen .main-media {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100vh - 3rem);
+  object-fit: contain;
 }
 
-.image-modal-content {
-  max-width: min(1200px, 100%);
-  max-height: 90vh;
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+.main-media-stage:fullscreen .main-video {
+  width: min(1200px, 100%);
 }
