@@ -99,7 +99,7 @@ export const renderGallery = (media: ProductMedia[]) => {
   if (!initialMedia) {
     return `
       <section class="gallery-card">
-        <h2>Imagens e videos do produto</h2>
+        <h2>Imagens do produto</h2>
         <p>Nenhuma midia disponivel.</p>
       </section>
     `
@@ -107,7 +107,7 @@ export const renderGallery = (media: ProductMedia[]) => {
 
   return `
     <section class="gallery-card">
-      <h2>Imagens e videos do produto</h2>
+      <h2>Imagens do produto</h2>
       <div id="${GALLERY_STAGE_ID}" class="main-media-stage">
         ${renderMainMedia(initialMedia)}
       </div>
