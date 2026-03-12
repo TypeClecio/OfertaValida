@@ -13,7 +13,7 @@ inject({
 const buildWhatsAppUrl = (phone: string, configuration: ProductConfiguration) => {
   const pageLink = window.location.href
   const whatsappMessage = encodeURIComponent(
-    `${pageLink}\nOla! Tenho interesse nessa oferta.\nConfiguracao escolhida: ${configuration.buttonLabel}\nPreco anunciado: ${configuration.price}`,
+    `${pageLink}\n\nGostaria de negociar:\nComputador com ${configuration.buttonLabel} no valor de ${configuration.price}`,
   )
 
   return `https://wa.me/${phone}?text=${whatsappMessage}`
