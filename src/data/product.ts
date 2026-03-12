@@ -7,7 +7,7 @@ export const productInfo: ProductInfo = {
     {
       id: 'ryzen-7-5700x',
       buttonLabel: 'Ryzen 7 5700X',
-      title: 'PC Gamer Ryzen 7 5700X - Setup Completo',
+      title: 'Setup Premium Ryzen 7 5700X + GTX 1080TI + 24 GB DDR4',
       subtitle: 'Computador de mesa de alta performance com monitor 200Hz e perifericos inclusos.',
       price: 'R$ 9.500,00',
       highlights: [
@@ -31,7 +31,7 @@ export const productInfo: ProductInfo = {
     {
       id: 'ryzen-5-5500',
       buttonLabel: 'Ryzen 5 5500',
-      title: 'PC Gamer Ryzen 5 5500 - Setup Completo',
+      title: 'Setup Premium Ryzen 5 5500 + GTX 1080TI + 24 GB DDR4',
       subtitle: 'Versao com melhor custo-beneficio, mantendo monitor 200Hz e perifericos inclusos.',
       price: 'R$ 8.700,00',
       highlights: [
