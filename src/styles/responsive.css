@@ -1,14 +1,11 @@
 @media (max-width: 880px) {
-  body {
-    padding: 20px 20px;
-  }
-
   #app {
     width: 100%;
     margin: 0 auto;
   }
 
   .store-page {
+    gap: 0.7rem;
     grid-template-columns: 1fr;
     grid-template-areas:
       'gallery'
@@ -24,6 +21,10 @@
   .gallery-card,
   .details-card {
     padding: 1.2rem;
+  }
+
+  .gallery-card {
+    border-radius: 0 0 18px 18px;
   }
 
   .config-options {
