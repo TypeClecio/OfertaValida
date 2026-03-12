@@ -75,8 +75,7 @@ export const productInfo: ProductInfo = {
   },
   paymentOptions: [
     { icon: 'pix', label: 'Pix' },
-    { icon: 'card', label: 'Cartao' },
-    { icon: 'installment', label: 'Parcelamento' },
+    { icon: 'card', label: 'Cartão' },
   ],
   valuePoints: [
     { icon: 'bolt', label: 'Pronto para jogar' },
