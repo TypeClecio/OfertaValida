@@ -60,6 +60,14 @@ const renderBadges = (items: OfferBadge[]) =>
     )
     .join('')
 
+const cardBrandIcons = [
+  { label: 'Visa', src: '/icons/brands/visa.svg' },
+  { label: 'Mastercard', src: '/icons/brands/mastercard.svg' },
+  { label: 'Elo', src: '/icons/brands/elo.svg' },
+  { label: 'Hipercard', src: '/icons/brands/hipercard.svg' },
+  { label: 'American Express', src: '/icons/brands/amex.svg' },
+]
+
 export const renderOfferCard = (product: ProductInfo, selectedConfiguration: ProductConfiguration) => `
   <section class="offer-card">
     <p class="tag">Oferta limitada</p>
@@ -100,9 +108,21 @@ export const renderOfferCard = (product: ProductInfo, selectedConfiguration: Pro
     
     <div class="offer-extras">
       <div class="offer-extra">
-        <p class="offer-extra-title">Formas de pagamento</p>
+        <p class="offer-extra-title">Meios de pagamento</p>
         <div class="offer-badges">
           ${renderBadges(product.paymentOptions)}
+        </div>
+        <p class="offer-extra-subtitle">Cartões de crédito</p>
+        <div class="payment-brands" aria-label="Bandeiras de cartao">
+          ${cardBrandIcons
+    .map(
+      (brand) => `
+            <span class="payment-brand-icon">
+              <img src="${brand.src}" alt="${brand.label}" loading="lazy" decoding="async" />
+            </span>
+          `,
+    )
+    .join('')}
         </div>
       </div>
       <div class="offer-extra is-emphasis">
@@ -121,7 +141,4 @@ export const renderOfferCard = (product: ProductInfo, selectedConfiguration: Pro
     </div>
   </section>
 `
-
-
-
 
