@@ -36,20 +36,30 @@
 }
 
 .site-footer {
-  margin: 3rem 0;
+  margin: 2.6rem 0 3rem;
+  padding: 1.4rem 1.6rem;
   text-align: center;
   color: #526174;
   font-size: 0.95rem;
+  background-color: #fcfdff;
+  border-radius: 18px;
+  border: 1px solid #d9e3f0;
+  box-shadow: 0 12px 24px rgba(41, 55, 77, 0.12);
 }
 
 .site-footer p {
   margin: 0;
 }
 
+.site-footer strong {
+  color: #1f2f44;
+}
+
 .footer-links {
-  margin-top: 0.45rem;
+  margin-top: 0.65rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.8rem;
 }
 
@@ -57,8 +67,15 @@
   color: #2d4f73;
   text-decoration: none;
   font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #cfd9e6;
+  background: #ffffff;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
+  transform: translateY(-1px);
+  border-color: #b5c5da;
+  box-shadow: 0 10px 18px rgba(45, 78, 114, 0.12);
 }
