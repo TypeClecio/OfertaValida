@@ -3,6 +3,18 @@ import type { ProductInfo } from '../types'
 export const sellerPhone = '5588994899407'
 
 export const productInfo: ProductInfo = {
+  seller: {
+    name: 'SetupVálido',
+    responseTime: 'Responde em ate 30 min',
+    rating: {
+      value: 4.9,
+      total: 128,
+    },
+    highlights: [
+      { icon: 'shield', label: 'Garantia de 90 dias' },
+      { icon: 'truck', label: 'Entrega local combinada' },
+    ],
+  },
   configurations: [
     {
       id: '2-monitores',
@@ -95,4 +107,3 @@ export const productInfo: ProductInfo = {
     { icon: 'package', label: 'Setup completo' },
   ],
 }
-

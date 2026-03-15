@@ -31,9 +31,25 @@ export type ProductLocation = {
   zip: string
 }
 
+export type SellerInfo = {
+  name: string
+  responseTime: string
+  rating: {
+    value: number
+    total: number
+  }
+  highlights: SellerHighlight[]
+}
+
+export type SellerHighlight = {
+  icon: 'shield' | 'truck' | 'tag'
+  label: string
+}
+
 export type ProductInfo = {
   configurations: ProductConfiguration[]
   media: ProductMedia[]
+  seller: SellerInfo
   location: ProductLocation
   paymentOptions: OfferBadge[]
   valuePoints: OfferBadge[]

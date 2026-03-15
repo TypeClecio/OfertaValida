@@ -14,7 +14,8 @@
 
 .gallery-card,
 .offer-card,
-.details-card {
+.details-card,
+.store-header {
   background-color: #fcfdff;
   border-radius: 18px;
   padding: 2rem;
@@ -33,6 +34,112 @@
 
 .details-card {
   grid-area: details;
+}
+
+.store-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.store-header-main {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.store-header-eyebrow {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5b6a7b;
+}
+
+.store-header-title {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  color: #182636;
+  line-height: 1.2;
+}
+
+.store-header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.store-header-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.store-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #dbe6f4;
+  background: #f7faff;
+  color: #3b556f;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.store-highlight-icon {
+  display: inline-flex;
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.store-highlight-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.store-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid #cfd9e6;
+  background: #ffffff;
+  color: #2d4f73;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.store-pill-icon {
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+}
+
+.store-pill-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.store-pill:nth-child(2) .store-pill-icon svg {
+  fill: currentColor;
+  stroke: none;
 }
 
 .site-footer {

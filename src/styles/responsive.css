@@ -19,7 +19,8 @@
 
   .offer-card,
   .gallery-card,
-  .details-card {
+  .details-card,
+  .store-header {
     padding: 1.2rem;
   }
 
@@ -50,6 +51,37 @@
 
   .config-options {
     grid-template-columns: 1fr;
+  }
+
+  .store-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+    border-radius: 0 0 18px 18px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  .store-header-meta {
+    justify-content: flex-start;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .store-header-highlights {
+    margin-top: 0.2rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .store-pill,
+  .store-highlight {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   dl div {

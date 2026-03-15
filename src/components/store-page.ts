@@ -2,11 +2,13 @@ import type { ProductInfo } from '../types'
 import { renderDetailsCard } from './details-card'
 import { renderGallery } from './gallery'
 import { renderOfferCard } from './offer-card'
+import { renderStoreHeader } from './store-header'
 
 export const renderStorePage = (product: ProductInfo) => {
   const initialConfiguration = product.configurations[0]
 
   return `
+  ${renderStoreHeader(product.seller, product.location)}
   <main class="store-page">
     ${renderGallery(product.media)}
     ${renderOfferCard(product, initialConfiguration)}
