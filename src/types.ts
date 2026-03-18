@@ -24,6 +24,7 @@ export type ProductConfiguration = {
   title: string
   price: string
   specifications: Specification[]
+  valuePoints?: OfferBadge[]
 }
 
 export type ProductLocation = {

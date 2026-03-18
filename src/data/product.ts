@@ -34,6 +34,11 @@ export const productInfo: ProductInfo = {
         { label: 'Gabinete', value: 'Husky aquario branco' },
         { label: 'Periféricos', value: 'Teclado e Mouse Mancer' },
       ],
+      valuePoints: [
+        { icon: 'bolt', label: 'Pronto para jogar' },
+        { icon: 'monitor', label: 'Monitor 200Hz incluso' },
+        { icon: 'package', label: 'Setup completo' },
+      ],
     },
     {
       id: 'sem-monitor',
@@ -51,6 +56,9 @@ export const productInfo: ProductInfo = {
         { label: 'Refrigeração', value: 'Watercooler 360mm + 6 fans com controladora' },
         { label: 'Gabinete', value: 'Husky aquario branco' },
         { label: 'Periféricos', value: 'Teclado e Mouse Mancer' }
+      ],
+      valuePoints: [
+        { icon: 'bolt', label: 'Pronto para jogar' },
       ],
     },
   ],

@@ -1,6 +1,7 @@
 import './style.css'
 import { inject } from '@vercel/analytics'
 import { renderSpecifications } from './components/details-card'
+import { renderOfferBadges } from './components/offer-card'
 import { setupGallery } from './components/gallery'
 import { renderStorePage } from './components/store-page'
 import { productInfo, sellerPhone } from './data/product'
@@ -43,11 +44,12 @@ const setupLocationLink = (location: ProductLocation) => {
   })
 }
 
-const updateSelectedConfiguration = (configuration: ProductConfiguration) => {
+const updateSelectedConfiguration = (product: ProductInfo, configuration: ProductConfiguration) => {
   const title = document.querySelector<HTMLElement>('[data-product-title]')
   const selectedConfig = document.querySelector<HTMLElement>('[data-selected-config]')
   const selectedPrice = document.querySelector<HTMLElement>('[data-selected-price]')
   const specifications = document.querySelector<HTMLDListElement>('[data-specifications]')
+  const valuePoints = document.querySelector<HTMLDivElement>('[data-value-points]')
   const whatsappLink = document.querySelector<HTMLAnchorElement>('[data-whatsapp-link]')
   const whatsappText = document.querySelector<HTMLElement>('[data-whatsapp-text]')
 
@@ -59,6 +61,10 @@ const updateSelectedConfiguration = (configuration: ProductConfiguration) => {
   selectedConfig.textContent = configuration.buttonLabel
   selectedPrice.textContent = configuration.price
   specifications.innerHTML = renderSpecifications(configuration.specifications)
+  if (valuePoints) {
+    const points = configuration.valuePoints ?? product.valuePoints
+    valuePoints.innerHTML = renderOfferBadges(points)
+  }
   whatsappLink.href = buildWhatsAppUrl(sellerPhone, configuration)
   whatsappText.textContent = `Quero garantir meu setup no WhatsApp`
 }
@@ -87,11 +93,11 @@ const setupConfigurationSelector = (product: ProductInfo) => {
         item.setAttribute('aria-pressed', String(isActive))
       })
 
-      updateSelectedConfiguration(configuration)
+      updateSelectedConfiguration(product, configuration)
     })
   })
 
-  updateSelectedConfiguration(product.configurations[0])
+  updateSelectedConfiguration(product, product.configurations[0])
 }
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderStorePage(productInfo)

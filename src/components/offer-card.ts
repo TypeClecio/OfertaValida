@@ -48,7 +48,7 @@ const offerIcons: Record<OfferIcon, string> = {
   `,
 }
 
-const renderBadges = (items: OfferBadge[]) =>
+export const renderOfferBadges = (items: OfferBadge[]) =>
   items
     .map(
       (item) => `
@@ -110,7 +110,7 @@ export const renderOfferCard = (product: ProductInfo, selectedConfiguration: Pro
       <div class="offer-extra">
         <p class="offer-extra-title">Meios de pagamento</p>
         <div class="offer-badges">
-          ${renderBadges(product.paymentOptions)}
+          ${renderOfferBadges(product.paymentOptions)}
         </div>
         <p class="offer-extra-subtitle">Cartões de crédito</p>
         <div class="payment-brands" aria-label="Bandeiras de cartao">
@@ -127,8 +127,8 @@ export const renderOfferCard = (product: ProductInfo, selectedConfiguration: Pro
       </div>
       <div class="offer-extra is-emphasis">
         <p class="offer-extra-title">Diferenciais do setup</p>
-        <div class="offer-badges">
-          ${renderBadges(product.valuePoints)}
+        <div class="offer-badges" data-value-points>
+          ${renderOfferBadges(selectedConfiguration.valuePoints ?? product.valuePoints)}
         </div>
       </div>
     </div>
